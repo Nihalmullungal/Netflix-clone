@@ -16,7 +16,7 @@ Future<List<Movie>> getdata(String genre) async {
   List<Movie> listmovie = [];
   http.Response response =
       await http.get(Uri.parse(ApiConfig.baseUrl + genre + ApiConfig.apiKey));
-  // "https://api.themoviedb.org/3/movie/157336?api_key=db3bcb2e34863dbbcf044f92b91ce558"));
+
   if (response.statusCode == 200) {
     final data = jsonDecode(response.body);
     List<dynamic> results = data['results'];
